@@ -11,13 +11,13 @@ print("Good luck", name, "!")
 finished = False
 # words = flashcard_library_name.list_name
 # Amount of turns allowed
-TURNS = int(input("How many questions would you like))
+TURNS = int(input("How many questions would you like?"))
 amount_correct = 0
 
-while !finished:
+while not finished:
     # Choose a random command question from the "database" (dictionary)
     q_and_a = random.choice(words)
-    question = q_and_a[0] # CHECK THE OUTPUT
+    question = q_and_a[0] #! CHECK THE OUTPUT
     answer = q_and_a[1]
     #! Display the question to the user 
     # print question[0]?
@@ -31,7 +31,7 @@ while !finished:
     while TURNS > 0:
         #! Does't account for permutations
         guesses.append(guess)
-        if guess == answer
+        if guess == answer:
             print("You are correct. Well done!")
             TURNS -= 1
             amount_correct += 1
@@ -46,9 +46,9 @@ while !finished:
             # are correct.
             i += 1
             # Instead of question[1] you need to iterate through the "ANSWER"
-            if c == :
+            if c == guess[i]:
                 correct = True
-    if TURNS = 0:
+    if TURNS == 0:
         finished = True
     
 print("You have finished with ", amount_correct, " correct. And ", failed, " incorrect.")
