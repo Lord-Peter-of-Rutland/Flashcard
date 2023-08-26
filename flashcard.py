@@ -1,4 +1,5 @@
 import random
+#! Any comment with #! is an important read, also i have left code that may not work currently.
 ## import flashcard_library_name
 
 # User is asked to entre there firt name.
@@ -8,9 +9,10 @@ print("Good luck", name, "!")
 
 # FLASHCARD GAME
 finished = False
-words = flashcard_library_name.list_name
+# words = flashcard_library_name.list_name
 # Amount of turns allowed
-TURNS = int(input("How many questions would you like?"))
+TURNS = int(input("How many questions would you like))
+amount_correct = 0
 
 while !finished:
     # Choose a random command question from the "database" (dictionary)
@@ -32,7 +34,7 @@ while !finished:
         if guess == answer
             print("You are correct. Well done!")
             TURNS -= 1
-            break
+            amount_correct += 1
         else:
             # count the number of failures ??
             falied += 1
@@ -46,5 +48,7 @@ while !finished:
             # Instead of question[1] you need to iterate through the "ANSWER"
             if c == :
                 correct = True
+    if TURNS = 0:
+        finished = True
     
-    
+print("You have finished with ", amount_correct, " correct. And ", failed, " incorrect.")
