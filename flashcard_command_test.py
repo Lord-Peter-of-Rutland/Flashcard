@@ -1,13 +1,12 @@
 import random
 # Importing the library we need in order to make a random choise
-# Flashcard, check permutations of the word
 
 # User is asked to entre there firt name.
 name = input("What is your first name? ")
 # Greet the user
 print("Good luck", name, "!")
 
-words = ['rainbow', 'computer', 'science', 'programming',
+words = ['rainbow', 'computer', 'science', 'programming',
          'python', 'mathematics', 'player', 'condition',
          'reverse', 'water', 'board', 'geeks']
 
@@ -15,9 +14,10 @@ cisco_commands = {"A configuration mode command that sets this Cisco device pass
 
 # choose a random command from the theosaurus
 word = random.choice(words)
+
 print("Guess the command")
 
-guesses = []
+guesses = ''
 
 # amount of turns to guess
 turns = 12
@@ -27,8 +27,6 @@ while turns > 0:
     # counting the number of failures
     failed = 0
 
-    # !Important! Need to check each character within the word against every
-    # char within guesses. 
     # if the word equals the guesses EXACTLY you win. Change so that it can check permutations of the word
     if word == guesses:
         print("You win!")
