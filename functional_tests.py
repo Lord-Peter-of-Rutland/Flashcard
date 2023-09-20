@@ -3,9 +3,13 @@ import unittest
 # The application is started with the library of questions added and checked that it functions correctly
 # from flashcard_library import CISCO_Commands
 
-class NewFlashcardGame(unittest.TestCase):
+class NewFlashcardGameTest(unittest.TestCase):
+    
+    def test_has_a_library_of_questions(self):
+        pass
     # The user is called Steven. He opens the app with python, with the argument of the library he wants to use
-       # def setup(self):
+        def setup(self):
+            self.game = python
             # Start app - ##  python 
 
     # He is greeted with a welcome that asks his name
