@@ -3,7 +3,7 @@ import unittest
 # The application is started with the library of questions added and checked that it functions correctly
 # from flashcard_library import CISCO_Commands
 
-class NewFlashcardGameTest(unittest.TestCase):
+class NewFlashcardGame(unittest.TestCase):
     
     def test_has_a_library_of_questions(self):
         pass

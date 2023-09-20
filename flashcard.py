@@ -3,17 +3,19 @@ import random
 #! import flashcard_library_name
 
 class FlashcardGame(flashcard_library_name):
-    # Asks the user how many turns they should be allowed
-    attempts = int(input("How many attempts for each questions would you like, 4 recogmended. >"))
-    number_of_questions = int(input("How many questions would you like?"))
-    # User is asked to enter there first name.
-    name = input("What is your first name? ")
-    # To account for the edge case where someone inputs there answer capitalised I will be asking the user
-    # to type there answer in all lower case.
-    print(f"Hello {name}. Welcome to your terminal flashcard game")
-    # The library is taken from the imported library of questions
-    #! Change to the actual list name
-    flashcard_library = flashcard_library_name.list_name()
+
+    def __init__(self, flashcard_library_name):
+        self.flashcard_library = flashcard_library_name.a_list_name()
+        # Asks the user how many turns they should be allowed
+        self.attempts = int(input("How many attempts for each questions would you like, 4 recogmended. >"))
+        self.number_of_questions = int(input("How many questions would you like?"))
+        # User is asked to enter there first name.
+        salf.name = input("What is your first name? ")
+        # To account for the edge case where someone inputs there answer capitalised I will be asking the user
+        # to type there answer in all lower case.
+        print(f"Hello {name}. Welcome to your terminal flashcard game")
+        # The library is taken from the imported library of questions
+        #! Change to the actual list name
     
     # Start flashcard game
     def startGame(self):
@@ -41,10 +43,10 @@ class FlashcardGame(flashcard_library_name):
                 # correct = False
                 # i = 0
                 # for c in guess:
-                    # using a counter to iterate through the word to check the characters
-                    # are correct.
-                    # i += 1
-                    # Instead of question[1] you need to iterate through the "ANSWER"
-                    # if c == guess[i]:
-                        # correct = True
-            print("You finished with ", len(correct_guesses), " correct. And ", len(incorrect_guesses), " incorrect.")
+                # using a counter to iterate through the word to check the characters
+                # are correct.
+                # i += 1
+                # Instead of question[1] you need to iterate through the "ANSWER"
+                # if c == guess[i]:
+                # correct = True
+            print("Well done! You have finished with ", len(correct_guesses), " correct. And ", len(incorrect_guesses), " incorrect.")
