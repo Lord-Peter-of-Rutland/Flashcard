@@ -1,11 +1,17 @@
 import random
-import flashcard_library
+from flashcard_library import CiscoCommandLibrary
 #! Any comment with #! is an important read, also i have left code that may not work currently.
+#! importlib was added to Python 3 to programmatically import a module. Use to import a SPECIFIC library name.
+
+#    import importlib
+#
+#    moduleName = input('Enter module name:')
+#    importlib.import_module(moduleName)
 
 class FlashcardGame():
 
-    def __init__(self, flashcard_library_name):
-        self.library = flashcard_library.cisco_iso_commands
+    def __init__(self):
+        self.library = CiscoCommandLibrary.cisco_iso_commands
         self.questions = self.library.keys()
         # Asks the user how many turns they should be allowed
         self.attempts = int(input("How many attempts for each questions would you like, 4 recogmended. >"))
