@@ -1,11 +1,12 @@
 import random
+import flashcard_library
 #! Any comment with #! is an important read, also i have left code that may not work currently.
-#! import flashcard_library_name
 
-class FlashcardGame(flashcard_library_name):
+class FlashcardGame():
 
     def __init__(self, flashcard_library_name):
-        self.flashcard_library = flashcard_library_name.a_list_name()
+        self.library = flashcard_library.cisco_iso_commands
+        self.questions = self.library.keys()
         # Asks the user how many turns they should be allowed
         self.attempts = int(input("How many attempts for each questions would you like, 4 recogmended. >"))
         self.number_of_questions = int(input("How many questions would you like?"))
@@ -24,11 +25,10 @@ class FlashcardGame(flashcard_library_name):
         incorrect_guesses = []
         questions_to_ask = number_of_questions
         attempts_left = attempts
-        while questions_to_ask != 0 or attempts_left == 0
+        while questions_to_ask != 0 or attempts_left == 0:
             # Choose a random question item from the "database" (dictionary)
-            question_answer = random.choice(flashcard_library)
-            question = questions_answer[0] #! There is a better way of doing this. Instead take a random item from the list of keys and then access the dictonary with the key
-            answer = questions_answer[1]
+            question = questions.choice.random() #! Is this correct?
+            answer = library[question]
             print(question)
             guess = input("Guess the command >") #! trim the guess for spaces
             if guess == answer:
