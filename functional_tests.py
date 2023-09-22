@@ -6,10 +6,10 @@ import flashcard
 
 class LibrarySetupTest(unittest.TestCase):
     
-    def test_library_sets_up_and_prints_correctly(self):
+    def test_library_sets_up(self):
         self.library = flashcardLibrary()
-        q_and_a = self.library.print_library()
-        self.assertIn(q_and_a, 'Enter global config mode', 'configure terminal')
+        question =  self.library.random_question()
+        assertIsNotNone(question)
         
 
 class NewFlashcardGame(unittest.TestCase):
