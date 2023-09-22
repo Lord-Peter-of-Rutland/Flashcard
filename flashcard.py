@@ -1,12 +1,13 @@
 import random
 from flashcard_library import CiscoCommandLibrary
 #! Any comment with #! is an important read, also i have left code that may not work currently.
+# The library is taken from the imported library of questions
+#! Change to the actual list name
 #! importlib was added to Python 3 to programmatically import a module. Use to import a SPECIFIC library name.
-
-#    import importlib
+#  import importlib
 #
-#    moduleName = input('Enter module name:')
-#    importlib.import_module(moduleName)
+#   moduleName = input('Enter module name:')
+#   importlib.import_module(moduleName)
 
 class FlashcardGame():
 
@@ -21,8 +22,7 @@ class FlashcardGame():
         # To account for the edge case where someone inputs there answer capitalised I will be asking the user
         # to type there answer in all lower case.
         print(f"Hello {name}. Welcome to your terminal flashcard game")
-        # The library is taken from the imported library of questions
-        #! Change to the actual list name
+
     
     # Start flashcard game
     def startGame(self):
@@ -34,10 +34,10 @@ class FlashcardGame():
         while questions_to_ask != 0 or attempts_left == 0:
             # Choose a random question item from the "database" (dictionary)
             question = questions.choice.random() #! Is this correct?
-            answer = library[question]
+            answer = library.get(question)
             print(question)
             guess = input("Guess the command >") #! trim the guess for spaces
-            if guess == answer:
+            if guess.strip() == answer:
                 print("You are correct. Well done!")
                 correct_guesses.append(guess)
                 questions_to_ask -= 1
