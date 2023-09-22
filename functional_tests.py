@@ -1,7 +1,16 @@
 import unittest
 # Functional Test for the Flashcard app
 # The application is started with the library of questions added and checked that it functions correctly
-# from flashcard_library import CISCO_Commands
+from flashcard_library import flashcardLibrary
+import flashcard
+
+class LibrarySetupTest(unittest.TestCase):
+    
+    def test_library_sets_up_and_prints_correctly(self):
+        self.library = flashcardLibrary()
+        q_and_a = self.library.print_library()
+        self.assertIn(q_and_a, 'Enter global config mode', 'configure terminal')
+        
 
 class NewFlashcardGame(unittest.TestCase):
     
@@ -9,9 +18,11 @@ class NewFlashcardGame(unittest.TestCase):
         pass
     # The user is called Steven. He opens the app with python, with the argument of the library he wants to use
         def setup(self):
-            self.game = python
-            # Start app - ##  python 
-
+            # Start the game  
+            #! self.game = FlashcardGame.start_game()
+            # Start app - ##  python            
+            pass
+            
     # He is greeted with a welcome that asks his name
     # after entering the name, he is asked how many questions he would like, Steven enters 5
 

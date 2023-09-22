@@ -1,13 +1,19 @@
 # Library of questions for Flashcards
 # CISCO ISO Commands
-class CiscoCommandLibrary():
+class flashcardLibrary():
     #! Change to storing  in a database
-    cisco_iso_commands = {'Entre global config mode': 'configure terminal', 'Display current startup configuration' : 'show ruuning config',
+    cisco_iso_commands = {'Enter global config mode': 'configure terminal', 'Display current startup configuration' : 'show ruuning config',
         'Display current running configuration' : 'show running config'}
         
+<<<<<<< HEAD
     def print_library():
         for key in cisco_iso_commands.keys():
             print(f"The question is {key} and has the answer {cisco_iso_commands[key]}" , " is this correct?")
+=======
+    def print_library(self):
+        for key in self.cisco_iso_commands.keys():
+            print(f"The question is {key} and the answer is {self.cisco_iso_commands[key]}")
+>>>>>>> origin/secondary
             
     def add_question(self, question, answer):
         self.question_to_add = question
