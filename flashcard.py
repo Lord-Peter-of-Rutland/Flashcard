@@ -7,21 +7,26 @@ from flashcard_library import flashcardLibrary
 #
 #    moduleName = input('Enter module name:')
 #    importlib.import_module(moduleName)
+     
 
 class FlashcardGame():
 
-    def __init__(self):
+    # Asks the user how many turns they should be allowed
+    ammount_of_attempts = int(input("How many attempts for each questions would you like, 4 recogmended. >"))
+    # User is asked to enter there first name.
+    your_name = input("What is your first name? ")   
+    number_of_questions = int(input("How many questions would you like?"))
+
+    def __init__(self, attempts, name, number_of_questions):
         self.flashcard_library = flashcardLibrary()
         question_library = self.flashcard_library.cisco_iso_commands
         self.questions = self.library.question_library.keys()
-        # Asks the user how many turns they should be allowed
-        self.attempts = int(input("How many attempts for each questions would you like, 4 recogmended. >"))
-        self.number_of_questions = int(input("How many questions would you like?"))
-        # User is asked to enter there first name.
-        salf.name = input("What is your first name? ")
+        self.name = name
+        self.attempts = attempts
+        self.number_of_questions = number_of_questions
         # To account for the edge case where someone inputs there answer capitalised I will be asking the user
         # to type there answer in all lower case.
-        print(f"Hello {name}. Welcome to your terminal flashcard game")
+        print(f"Hello {self.name}. Welcome to your terminal flashcard game")
         # The library is taken from the imported library of questions
         #! Change to the actual list name
     
@@ -30,19 +35,19 @@ class FlashcardGame():
         finished = False
         correct_guesses = []
         incorrect_guesses = []
-        questions_to_ask = number_of_questions
-        attempts_left = attempts
+        questions_to_ask = self.number_of_questions
+        attempts_left = self.attempts
         while questions_to_ask != 0 or attempts_left == 0:
             # Choose a random question item from the "database" (dictionary)
-            question = questions.choice.random() #! Is this correct?
-            answer = library[question]
+            question = self.flashcard_library.random_qustion() #! Is this correct?
+            answer = self.flashcard_library[question]
             print(question)
             guess = input("Guess the command >") #! trim the guess for spaces
             if guess == answer:
                 print("You are correct. Well done!")
                 correct_guesses.append(guess)
                 questions_to_ask -= 1
-                attempts_left = attempts
+                attempts_left = self.attempts
             else:
                 incorrect_guesses.append(guess)
                 attempts_left -= 1

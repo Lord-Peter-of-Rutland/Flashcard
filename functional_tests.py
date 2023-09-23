@@ -9,7 +9,7 @@ class LibrarySetupTest(unittest.TestCase):
     def test_library_sets_up(self):
         self.library = flashcardLibrary()
         question =  self.library.random_question()
-        assertIsNotNone(question)
+        unittest.assertNotEqual(question, None, "There was a question...")
         
 
 class NewFlashcardGame(unittest.TestCase):
