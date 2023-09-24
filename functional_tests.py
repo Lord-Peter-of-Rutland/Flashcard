@@ -4,24 +4,17 @@ import unittest
 from flashcard_library import flashcardLibrary
 import flashcard
 
-class LibrarySetupTest(unittest.TestCase):
-    
-    def test_library_sets_up(self):
+class NewFlashcardGame(unittest.TestCase):
+    # The user Mickae opens the flashcard game in python, with the argument of the library he wants to use
+    def setUp(self):
         self.library = flashcardLibrary()
         question =  self.library.random_question()
-        unittest.assertNotEqual(question, None, "There was a question...")
+        self.assertNotEqual(question, None, "There was a question...")
         
 
-class NewFlashcardGame(unittest.TestCase):
-    
     def test_has_a_library_of_questions(self):
-        pass
-    # The user is called Steven. He opens the app with python, with the argument of the library he wants to use
-        def setup(self):
-            # Start the game  
-            #! self.game = FlashcardGame.start_game()
-            # Start app - ##  python            
-            pass
+        self.assertNotEqual(None, self.library.print_library())
+    
             
     # He is greeted with a welcome that asks his name
     # after entering the name, he is asked how many questions he would like, Steven enters 5

@@ -1,37 +1,23 @@
 import random
-from flashcard_library import flashcardLibrary
-#! Any comment with #! is an important read, also i have left code that may not work currently.
-#! importlib was added to Python 3 to programmatically import a module. Use to import a SPECIFIC library name.
-
-#    import importlib
-#
-#    moduleName = input('Enter module name:')
-#    importlib.import_module(moduleName)
-     
+from flashcard_library import flashcardLibrary     
 
 class FlashcardGame():
 
-    # Asks the user how many turns they should be allowed
-    ammount_of_attempts = int(input("How many attempts for each questions would you like, 4 recogmended. >"))
-    # User is asked to enter there first name.
-    your_name = input("What is your first name? ")   
-    number_of_questions = int(input("How many questions would you like?"))
-
-    def __init__(self, attempts, name, number_of_questions):
+    def __init__(self):
         self.flashcard_library = flashcardLibrary()
         question_library = self.flashcard_library.cisco_iso_commands
         self.questions = self.library.question_library.keys()
-        self.name = name
-        self.attempts = attempts
-        self.number_of_questions = number_of_questions
+        
+    # Start flashcard game
+    def startGame(self):
+        # Asks the user how many turns they should be allowed
+        self.attempts = int(input("How many attempts for each questions would you like, 4 recogmended. >"))
+        # User is asked to enter there first name.
+        self.name = input("What is your first name? ")   
+        self.number_of_questions = int(input("How many questions would you like?"))
         # To account for the edge case where someone inputs there answer capitalised I will be asking the user
         # to type there answer in all lower case.
         print(f"Hello {self.name}. Welcome to your terminal flashcard game")
-        # The library is taken from the imported library of questions
-        #! Change to the actual list name
-    
-    # Start flashcard game
-    def startGame(self):
         finished = False
         correct_guesses = []
         incorrect_guesses = []
