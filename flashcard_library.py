@@ -5,7 +5,7 @@ import random
 class flashcardLibrary():
     #! Change to storing  in a database
     def __init__(self):
-        self.cisco_iso_commands = {'Enter global config mode': 'configure terminal', 'Display current startup configuration' : 'show ruuning config',
+        self.cisco_iso_commands = {'Enter global config mode': 'configure terminal', 'Display current startup configuration' : 'show runing config',
         'Display current running configuration' : 'show running config'}
     
     def random_question(self):
@@ -14,9 +14,9 @@ class flashcardLibrary():
         return question
     
     def print_library():
-        questions = self.cisco_iso_commands.keys()
+        questions = flashcardLibrary.cisco_iso_commands.keys()
         for key in questions:
-            print(f"The question is {key} and has the answer {self.cisco_iso_commands[key]}" , " is this correct?")
+            print(f"The question is {key} and has the answer {flashcardLibrary.cisco_iso_commands[key]}" , " is this correct?")
            
     def add_question(self, question, answer):
         self.question_to_add = question

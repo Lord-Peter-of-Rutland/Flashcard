@@ -14,11 +14,13 @@ class NewFlashcardGame(unittest.TestCase):
 
     def test_has_a_library_of_questions(self):
         self.assertNotEqual(None, self.library.print_library())
-    
+        self.assertIn("Enter global config mode", self.library.print_library(), "The first question is not in the library")
             
     # He is greeted with a welcome that asks his name
     # after entering the name, he is asked how many questions he would like, Steven enters 5
-
+    def test_starting_a_game(self):
+        self.game = flashcard()
+        self.start_game = self.game.start_game()
     # after hitting enter Steven is given a question in the terminal and is asked to answer it.
 
     # the attempt is saved

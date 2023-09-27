@@ -9,7 +9,7 @@ class FlashcardGame():
         self.questions = self.library.question_library.keys()
         
     # Start flashcard game
-    def startGame(self):
+    def start_game(self):
         # Asks the user how many turns they should be allowed
         self.attempts = int(input("How many attempts for each questions would you like, 4 recogmended. >"))
         # User is asked to enter there first name.
